@@ -1,0 +1,23 @@
+{
+  "name": "portafolio",
+  "version": "1.0.0",
+  "description": "Yet another personal website using github pages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kossel/kossel.github.io.git"
+  },
+  "keywords": [
+    "react",
+    "redux"
+  ],
+  "author": "Yichao",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kossel/kossel.github.io/issues"
+  },
+  "homepage": "https://github.com/kossel/kossel.github.io#readme"
+}
