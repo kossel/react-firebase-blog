@@ -1,0 +1,25 @@
+# dist folder
+dist
+
+# IDEA/Webstorm project files
+.idea
+*.iml
+
+#VSCode metadata
+.vscode
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Logs
+logs
+*.log*
+
+# node.js
+#
+node_modules
+npm-debug.log
+
+# OSX
+#
+.DS_Store
