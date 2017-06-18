@@ -1,3 +1,11 @@
-/**
- * Created by Kossel on 6/17/2017.
- */
+import React from 'react';
+import { render } from 'react-dom';
+
+
+function App(){
+  return (
+    <div>hello</div>
+  );
+}
+
+render(<App/>, document.getElementById('app'));
