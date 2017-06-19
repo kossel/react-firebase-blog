@@ -13,17 +13,14 @@ module.exports = {
   },
   devtool: 'eval-source-map',
   entry: [
-    // must be first entry to properly set public path
-    // 'whatwg-fetch',
-    './main/webpack-public-path',
-    'webpack-hot-middleware/client?reload=true',
-    path.join(process.cwd(), 'main/index.web.js'),
+    'react-hot-loader/patch',
+    './index.js',
   ],
-  target: 'web', // necessary per https://webpack.github.io/docs/testing.html#compile-and-test
   output: {
-    path: path.resolve(__dirname, 'main/dist'), // Note: Physical files are only output by the production build task `npm run build`.
+    path: path.join(__dirname, './dist'),
     publicPath: '/',
-    filename: 'bundle.js',
+    filename: '[name]-[hash:8].js',
+    chunkFilename: '[name]-[chunkhash:8].js',
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -33,7 +30,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
-      template: 'main/index.ejs',
+      template: 'src/index.dev.ejs',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -46,7 +43,7 @@ module.exports = {
       noInfo: true, // set to false to see a list of every file being bundled.
       options: {
         lessLoader: {
-          includePaths: [path.resolve(__dirname, 'src', 'less')],
+          includePaths: [path.resolve(__dirname, 'src', 'scss')],
         },
         context: '/',
         postcss: () => [autoprefixer],
@@ -56,29 +53,8 @@ module.exports = {
   module: {
     rules: [
       { test: /\.jsx?$/,
-        exclude: /(node_modules|android|ios|app)/,
-        loader: 'babel-loader',
-        options: {
-          babelrc: false,
-          presets: [
-            'env',
-            'react',
-            'stage-2',
-            'react-hmre',
-          ],
-          plugins: [
-            ['react-intl', {
-              messagesDir: './main/web/translations/',
-            }],
-            [
-              'import',
-              {
-                libraryName: 'antd',
-                style: true,
-              },
-            ],
-          ],
-        },
+        exclude: /node_modules/,
+        use: ['babel-loader'],
       },
       { test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader' },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
@@ -87,11 +63,26 @@ module.exports = {
       { test: /\.(jpe?g|png|gif)$/i, loader: 'file-loader?name=[name].[ext]' },
       { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
       {
-        test: /\.(css|less)$/,
+        test: /\.(css|scss)$/,
+        exclude: /node_modules/,
         use: [
-          'style-loader',
-          'css-loader?sourceMap',
-          `less-loader?{"sourceMap":true,"modifyVars":${JSON.stringify(theme)}}`,
+          {
+            loader: 'style-loader',
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              module: true,
+              localIdentName: '[path][name]-[local]',
+            },
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              outputStyle: 'expanded',
+              sourceMap: false,
+            },
+          },
         ],
       },
     ],
