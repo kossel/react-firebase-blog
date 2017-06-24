@@ -4,7 +4,8 @@
   "description": "Yet another personal website using github pages",
   "main": "index.js",
   "scripts": {
-    "start": "babel-node scripts/devServer.js",
+    "start": "cross-env babel-node scripts/server.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -39,6 +40,7 @@
     "babel-preset-react": "^6.24.1",
     "browser-sync": "^2.18.12",
     "bs-fullscreen-message": "^1.1.0",
+    "cross-env": "^5.0.1",
     "eslint": "^4.0.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-airbnb-base": "^11.2.0",
@@ -47,13 +49,17 @@
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.1.0",
     "eslint-watch": "^3.1.2",
+    "extract-text-webpack-plugin": "^2.1.2",
     "html-webpack-plugin": "^2.28.0",
     "lint-staged": "^3.6.1",
     "node-sass": "^4.5.3",
     "postcss-loader": "^2.0.6",
+    "preload-webpack-plugin": "^1.2.2",
     "react-hot-loader": "next",
     "sass-loader": "^6.0.6",
+    "script-ext-html-webpack-plugin": "^1.8.1",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.2"
   }

@@ -9,7 +9,12 @@ var stripAnsi            = require('strip-ansi');
 /**
  * Require ./webpack.config.js and make a bundler from it
  */
-var webpackConfig = require('../configs/webpack.config.dev');
+let webpackConfig;
+if(process.env.NODE_ENV === 'production') {
+  webpackConfig = require('../configs/webpack.config.prod');
+} else {
+  webpackConfig = require('../configs/webpack.config.dev');
+}
 var bundler       = webpack(webpackConfig);
 
 /**

@@ -4,7 +4,7 @@ import { render } from 'react-dom';
 
 function App(){
   return (
-    <div>hello</div>
+    <div>input</div>
   );
 }
 
