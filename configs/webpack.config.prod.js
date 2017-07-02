@@ -18,7 +18,7 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: './index.js',
   output: {
-    path: path.join(__dirname, '../dist'),
+    path: path.join(__dirname, '../'),
     publicPath: '/',
     filename: '[name]-[hash].js',
     chunkFilename: '[name]-[chunkhash].js',
@@ -26,7 +26,6 @@ module.exports = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('production'), // Tells React to build in either dev or prod modes. https://facebook.github.io/react/downloads.html (See bottom)
-      __DEV__: false,
     }),
     new webpack.optimize.CommonsChunkPlugin({
       async: true,
