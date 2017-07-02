@@ -4,8 +4,8 @@
   "description": "Yet another personal website using github pages",
   "main": "index.js",
   "scripts": {
-    "start": "cross-env babel-node scripts/server.js",
-    "build": "cross-env NODE_ENV=production webpack --config ./configs/webpack.config.prod.js",
+    "start": "cross-env NODE_ENV=development webpack-dev-server --config ./configs/webpack.config.dev.js",
+    "build": "cross-env NODE_ENV=production webpack-dev-server --config ./configs/webpack.config.prod.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -38,10 +38,10 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-env": "^1.5.2",
     "babel-preset-react": "^6.24.1",
-    "browser-sync": "^2.18.12",
     "bs-fullscreen-message": "^1.1.0",
     "cross-env": "^5.0.1",
-    "eslint": "^4.0.0",
+    "css-loader": "^0.28.4",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb": "^15.0.1",
     "eslint-config-airbnb-base": "^11.2.0",
     "eslint-import-resolver-webpack": "^0.8.1",
@@ -61,6 +61,7 @@
     "style-loader": "^0.18.2",
     "uglifyjs-webpack-plugin": "^0.4.6",
     "webpack": "^2.6.1",
-    "webpack-dev-middleware": "^1.10.2"
+    "webpack-dev-middleware": "^1.10.2",
+    "webpack-dev-server": "^2.5.0"
   }
 }

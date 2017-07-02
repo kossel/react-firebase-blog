@@ -14,6 +14,9 @@ module.exports = {
   devtool: 'eval-source-map',
   entry: [
     'react-hot-loader/patch',
+    //'webpack-dev-server/client?http://localhost:8080',
+    //'webpack/hot/only-dev-server',
+
     './index.js',
   ],
   output: {
@@ -54,7 +57,7 @@ module.exports = {
     rules: [
       { test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: ['babel-loader'],
+        loader: 'babel-loader',
       },
       { test: /\.eot(\?v=\d+.\d+.\d+)?$/, loader: 'file-loader' },
       { test: /\.woff(2)?(\?v=[0-9]\.[0-9]\.[0-9])?$/, loader: 'url-loader?limit=10000&mimetype=application/font-woff' },
@@ -64,7 +67,6 @@ module.exports = {
       { test: /\.ico$/, loader: 'file-loader?name=[name].[ext]' },
       {
         test: /\.(css|scss)$/,
-        exclude: /node_modules/,
         use: [
           {
             loader: 'style-loader',
@@ -72,19 +74,29 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              module: true,
-              localIdentName: '[path][name]-[local]',
+              sourceMap: true,
             },
           },
           {
             loader: 'sass-loader',
             options: {
               outputStyle: 'expanded',
-              sourceMap: false,
+              sourceMap: true,
             },
           },
         ],
       },
     ],
+  },
+  devServer: {
+    compress: true,
+    contentBase: path.join(__dirname, 'dist'),
+    historyApiFallback: true,
+    hot: true,
+    inline: true,
+    lazy: false,
+    noInfo: true,
+    publicPath: '/',
+    watchContentBase: false,
   },
 };
