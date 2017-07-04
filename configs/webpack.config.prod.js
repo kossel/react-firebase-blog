@@ -15,7 +15,6 @@ module.exports = {
     ],
     extensions: ['.js', '.jsx', '.json'],
   },
-  devtool: 'eval-source-map',
   entry: './index.js',
   output: {
     path: path.join(__dirname, '../'),
@@ -64,7 +63,7 @@ module.exports = {
 
     new webpack.NoEmitOnErrorsPlugin(),
 
-    new UglifyJSPlugin({
+    new webpack.optimize.UglifyJsPlugin({
       compress: {
         warnings: false,
         screw_ie8: true,
