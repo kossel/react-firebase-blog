@@ -40,18 +40,6 @@ module.exports = {
       },
       inject: true,
     }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-      noInfo: true, // set to false to see a list of every file being bundled.
-      options: {
-        lessLoader: {
-          includePaths: [path.resolve(__dirname, 'src', 'scss')],
-        },
-        context: '/',
-        postcss: () => [autoprefixer],
-      },
-    }),
   ],
   module: {
     rules: [

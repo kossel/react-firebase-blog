@@ -78,19 +78,6 @@ module.exports = {
         join_vars: true,
       },
     }),
-
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false,
-      noInfo: true, // set to false to see a list of every file being bundled.
-      options: {
-        lessLoader: {
-          includePaths: [path.resolve(__dirname, 'src', 'scss')],
-        },
-        context: '/',
-        postcss: () => [autoprefixer],
-      },
-    }),
   ],
   performance: {
     maxAssetSize: 300000,
@@ -118,10 +105,20 @@ module.exports = {
             {
               loader: 'css-loader',
               options: {
-                module: true, // css-loader 0.14.5 compatible
-                modules: true,
+                // module: true, // css-loader 0.14.5 compatible
+                // modules: true,
                 localIdentName: '[hash:base64:5]',
               },
+            },
+            {
+              loader: 'postcss-loader',
+              options: {
+                plugins: [autoprefixer],
+                minimize: true,
+                debug: false,
+                noInfo: true,
+                sourceMap: true,
+              }
             },
             {
               loader: 'sass-loader',
@@ -129,9 +126,6 @@ module.exports = {
                 outputStyle: 'collapsed',
                 sourceMap: true,
               },
-            },
-            {
-              loader: 'postcss-loader',
             },
           ],
         }),
