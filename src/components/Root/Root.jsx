@@ -1,11 +1,16 @@
 import React from 'react';
-import Test from 'components/Test';
+import Header from 'components/Header';
+import Main from 'components/Main';
+import Footer from 'components/Footer';
 
-export default function Root(){
+function Root(){
   return (
     <div>
-      ddd
-      <Test name="Yichaossffs" />
+      <Header />
+      <Main />
+      <Footer />
     </div>
   );
 }
+
+export default Root;
