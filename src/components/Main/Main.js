@@ -1,11 +1,14 @@
 import React from 'react';
-import SideBar from 'components/SideBar'
+import Entry from 'components/Entry';
 
 function Main(){
   return (
     <div>
-      <SideBar />
-      <div>This is main</div>
+      <Entry />
+      <Entry />
+      <Entry />
+      <Entry />
+      <Entry />
     </div>
 
   )
