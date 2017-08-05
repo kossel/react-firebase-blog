@@ -1,7 +1,7 @@
 import React from 'react';
 import Entry from 'components/Entry';
 
-function Main(){
+function Home(){
   return (
     <div>
       <Entry />
@@ -10,8 +10,7 @@ function Main(){
       <Entry />
       <Entry />
     </div>
-
   )
 }
 
-export default Main;
+export default Home;

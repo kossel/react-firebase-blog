@@ -1,9 +1,11 @@
-import React from 'react';
+import React, {PureComponent } from 'react';
 
-function SideBar(){
-  return (
-    <div>This is SideBar</div>
-  )
+class SideBar extends PureComponent {
+  render() {
+    return (
+        <div>This is SideBar</div>
+      )
+  }
 }
 
 export default SideBar;
