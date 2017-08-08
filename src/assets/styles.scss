@@ -1,0 +1,28 @@
+@import './theme.scss';
+
+body {
+  // background-image: url('./images/bg.png');
+  // background-repeat: no-repeat;
+  // background-attachment: fixed;
+  // background-position: center;
+  // background-size: cover;
+
+  background: #ECE9E6;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #FFFFFF, #ECE9E6);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to top, #FFFFFF, #ECE9E6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  // background: #232526;  /* fallback for old browsers */
+  // background: -webkit-linear-gradient(to bottom, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+  // background: linear-gradient(to bottom, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.menu-container {
+  display: table;
+  position: fixed;
+  height: 100%;
+}
+
+.menu {
+  vertical-align: middle;
+  display: table-cell;
+}

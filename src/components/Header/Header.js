@@ -1,7 +1,4 @@
 import React, { PureComponent } from 'react';
-import {
-  Link
-} from 'react-router-dom'
 import SideBar from 'components/SideBar';
 
 class Header extends PureComponent {
@@ -26,26 +23,15 @@ class Header extends PureComponent {
             </div>
           </div>
         </nav>
-        <div className="hero is-medium is-primary is-bold">
+        <div className="hero is-medium is-dark is-bold">
           <div className="hero-body">
             <div className="container">
               <h1 className="title">Kossel.github.io</h1>
               <h2 className="subtitle"> Coding to proof</h2>
             </div>
           </div>
-          <div className="hero-foot">
-            <div className="container">
-              <div className="tabs is-boxed">
-                <ul>
-                  <li className="is-active"><Link to="/">Home</Link></li>
-                  <li><Link to="/about">about</Link></li>
-                  <li><a href="">Menu 4</a></li>
-                </ul>
-              </div>
-            </div>
         </div>
       </div>
-    </div>
     )
   }
 }
