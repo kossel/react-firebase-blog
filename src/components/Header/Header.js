@@ -1,37 +1,35 @@
 import React, { PureComponent } from 'react';
+import {
+  Link
+} from 'react-router-dom';
 import SideBar from 'components/SideBar';
+import './styles.scss';
+import avatarCircle from 'assets/images/avatar.png';
+import headerSeparator from 'assets/images/top_separator.png';
+import profilePic from 'assets/images/profile.png';
 
 class Header extends PureComponent {
   render(){
     return (
-      <div>
-        <nav className="navbar">
-          <div className="container">
-            <div className="navbar-brand">
-              <div className="navbar-burger">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
-            <div className="navbar-menu">
-              <div className="navbar-end">
-                <a href="#" className="navbar-item is-active">Home</a>
-                <a href="#" className="navbar-item">Stuff</a>
-                <a href="#" className="navbar-item">Github</a>
-              </div>
+        <div className="hero is-medium is-bold">
+          <div className="hero-body">
+            <div className="has-text-centered profile-pic-container">
+              <img src={avatarCircle} alt=""/>
             </div>
           </div>
-        </nav>
-        <div className="hero is-medium is-dark is-bold">
-          <div className="hero-body">
-            <div className="container">
-              <h1 className="title">Kossel.github.io</h1>
-              <h2 className="subtitle"> Coding to proof</h2>
-            </div>
+           <div className="hero-foot">
+              <nav className="tabs is-centered">
+                <ul className="menu-list">
+                  <li><Link to="/">Other stuff</Link></li>
+                  <li><Link to="/about">blah stuff</Link></li>
+                  <li><a href="">Foo Bar</a></li>
+                </ul>
+              </nav>
+          </div>
+          <div className="header-footer">
+            <img src={headerSeparator} alt=""/>
           </div>
         </div>
-      </div>
     )
   }
 }

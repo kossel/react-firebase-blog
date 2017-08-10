@@ -13,19 +13,11 @@ import 'assets/styles.scss';
 
 function App(){
   return (
-    <div>
-      <section className="section">
-        <div className="container">
-          <div className="columns">
-            <div className="column">
+    <div className="app-container">
+      <section className="section main-container">
+          <Header />
               <Route exact path="/" component={Home}/>
               <Route path="/about" component={About}/>
-            </div>
-            <div className="column is-one-quarter">
-              <SideBar />
-            </div>
-          </div>
-        </div>
       </section>
       <Footer />
     </div>

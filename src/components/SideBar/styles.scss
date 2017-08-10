@@ -1,0 +1,17 @@
+.menu-container {
+  position: fixed;
+  height: 100%;
+  display: flex;
+}
+
+.menu-separator {
+  background-image: url('../../assets/images/v_separator.png');
+  width: 26px;
+  height: 430px;
+  background-repeat: no-repeat;
+}
+
+.menu {
+  vertical-align: middle;
+  padding-left: 20px;
+}

@@ -1,12 +1,14 @@
 import React, {PureComponent } from 'react';
 import {
   Link
-} from 'react-router-dom'
+} from 'react-router-dom';
+import './styles.scss';
 
 class SideBar extends PureComponent {
   render() {
     return (
       <div className="menu-container">
+        <div className="menu-separator" />
         <aside className="menu">
           <p className="menu-label">
             General
