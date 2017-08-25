@@ -1,7 +1,10 @@
 import React from 'react';
 import Entry from 'components/Entry';
+import connect from 'redux';
+import fetchPosts from 'store/post/actions';
 
-function Home(){
+function Home({posts}){
+  console.log(posts);
   return (
     <div>
       <Entry />
@@ -11,6 +14,18 @@ function Home(){
       <Entry />
     </div>
   )
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    post: state.post
+  }
 }
 
-export default Home;
+const mapDispatchToProps = (dispatch, ownProps) => {
+  return {
+    fetchPosts: () => dispatch(fetchPosts()),
+    }
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -1,1 +1,11 @@
-export default {};
+import { firebaseStateReducer } from 'react-redux-firebase'
+import { routerReducer } from 'react-router-redux';
+import { combineReducers } from 'redux'
+
+import post from 'store/post/reducer';
+
+export default combineReducers({
+    post,
+    firebase: firebaseStateReducer,
+    router: routerReducer,
+  });
