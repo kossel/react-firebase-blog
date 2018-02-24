@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.scss';
 
-function Footer(){
+function Footer() {
   return (
     <footer className="footer">
       <div className="container">
@@ -12,7 +12,7 @@ function Footer(){
         </div>
       </div>
     </footer>
-  )
+  );
 }
 
 export default Footer;

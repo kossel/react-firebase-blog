@@ -1,11 +1,11 @@
 import React from 'react';
 
-function About(){
+function About() {
   return (
     <div>
-      <h3> Hello it's me!</h3>
+      <h3> Hello it s me!</h3>
     </div>
-  )
+  );
 }
 
 export default About;

@@ -1,9 +1,8 @@
-import React, {PureComponent } from 'react';
-import {
-  Link
-} from 'react-router-dom';
+import React, { PureComponent } from 'react';
+import { Link } from 'react-router-dom';
 import './styles.scss';
 
+// eslint-disable-next-line
 class SideBar extends PureComponent {
   render() {
     return (
@@ -14,8 +13,8 @@ class SideBar extends PureComponent {
             General
           </p>
           <ul className="menu-list">
-            <li><a href="" className="is-actinve">Home</a></li>
-            <li><a href="">Coding</a></li>
+            <li><a href="#top" className="is-actinve">Home</a></li>
+            <li><a href="#top">Coding</a></li>
           </ul>
           <p className="menu-label">
             More
@@ -23,12 +22,12 @@ class SideBar extends PureComponent {
           <ul className="menu-list">
             <li><Link to="/">Other stuff</Link></li>
             <li><Link to="/about">blah stuff</Link></li>
-            <li><a href="">Foo Bar</a></li>
+            <li><a href="#top">Foo Bar</a></li>
           </ul>
         </aside>
       </div>
 
-      )
+    );
   }
 }
 

@@ -1,0 +1,31 @@
+{
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "jest": true,
+    "es6": true
+  },
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true
+    }
+  },
+  "parser": "babel-eslint",
+  "settings": {
+    "import/resolver": {
+      "webpack": {
+        "config": "./configs/webpack.config.dev.js"
+      }
+    }
+  },
+  "rules": {
+    "linebreak-style": 0,
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "to", "hrefLeft", "hrefRight" ],
+      "aspects": [ "noHref", "invalidHref", "preferButton" ]
+    }]
+  }
+}

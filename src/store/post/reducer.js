@@ -3,6 +3,6 @@ export default function post(state = [], action) {
     case 'FETCH_POSTS':
       return action.data;
     default:
-      return state
+      return state;
   }
 }
