@@ -6,7 +6,7 @@ import history from 'store/enhancedHistory';
 
 import App from 'components/App';
 
-export default function Root() {
+function Root() {
   return (
     <Provider store={store}>
       <ConnectedRouter history={history}>
@@ -15,3 +15,5 @@ export default function Root() {
     </Provider>
   );
 }
+
+export default Root;

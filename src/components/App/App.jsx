@@ -10,8 +10,8 @@ import 'assets/styles.scss';
 function App() {
   return (
     <div className="app-container">
+      <Header />
       <section className="section main-container">
-        <Header />
         <Route exact path="/" component={Home} />
         <Route path="/about" component={About} />
       </section>

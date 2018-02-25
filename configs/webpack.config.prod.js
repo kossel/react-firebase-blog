@@ -3,7 +3,6 @@ const path = require('path');
 const autoprefixer = require('autoprefixer');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const PreloadWebpackPlugin = require('preload-webpack-plugin');
 const ScriptExtHtmlWebpackPlugin = require('script-ext-html-webpack-plugin');
 
@@ -15,7 +14,7 @@ module.exports = {
     ],
     extensions: ['.js', '.jsx', '.json'],
   },
-  entry: './index.js',
+  entry: './index.jsx',
   output: {
     path: path.join(__dirname, '../'),
     publicPath: '/',
@@ -32,10 +31,10 @@ module.exports = {
       minChunks: 2,
     }),
 
-     // create css bundle
+    // create css bundle
     new ExtractTextPlugin('style-[contenthash:8].css'),
 
-    new HtmlWebpackPlugin({     // Create HTML file that includes references to bundled CSS and JS.
+    new HtmlWebpackPlugin({ // Create HTML file that includes references to bundled CSS and JS.
       template: 'src/index.dev.ejs',
       production: true,
       minify: {
@@ -85,7 +84,8 @@ module.exports = {
   },
   module: {
     rules: [
-      { test: /\.jsx?$/,
+      {
+        test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ['babel-loader'],
       },
@@ -117,7 +117,7 @@ module.exports = {
                 debug: false,
                 noInfo: true,
                 sourceMap: true,
-              }
+              },
             },
             {
               loader: 'sass-loader',
